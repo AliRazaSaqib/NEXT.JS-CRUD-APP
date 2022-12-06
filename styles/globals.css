@@ -1,9 +1,10 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -15,12 +16,60 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+/* css transition */
+
+:root {
+  --duration: 2000ms;
+}
+
+.css-transition-enter {
+  opacity: 0;
+}
+
+.css-transition-enter-active {
+  opacity: 1;
+  transition: opacity var(--duration) ease-in-out;
+}
+
+.css-transition-enter-done {
+  opacity: 1;
+}
+
+.css-transition-exit {
+  opacity: 1;
+}
+
+.css-transition-exit-active {
+  opacity: 0;
+  transition: opacity var(--duration) ease-in-out;
+}
+
+.css-transition-exit-done {
+  opacity: 0;
+}
+
+.icon-container {
+  font-size: 5em;
+}
+
+.switch-transition-enter {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.switch-transition-enter-active {
+  transform: scale(1);
+  opacity: 1;
+  transition: all 500ms ease-in;
+}
+
+.switch-transition-exit {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.switch-transition-exit-active {
+  transform: scale(0);
+  opacity: 0;
+  transition: all 500ms ease-in;
 }
