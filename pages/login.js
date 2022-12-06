@@ -53,6 +53,11 @@ export default function login() {
     signIn("google", { callbackUrl: "http://localhost:3000" });
   }
 
+  // Google Handler function
+  async function handleGitHubSignin() {
+    signIn("github", { callbackUrl: "http://localhost:3000" });
+  }
+
   //detect outside click
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
@@ -148,6 +153,7 @@ export default function login() {
               <button
                 type="button"
                 className="bg-white drop-shadow-md w-full rounded-xl flex justify-center items-center gap-4 py-2 hover:scale-105 duration-300"
+                onClick={handleGitHubSignin}
               >
                 <span>
                   <GoMarkGithub />
