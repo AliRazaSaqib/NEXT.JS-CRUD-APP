@@ -42,6 +42,8 @@ export default function login() {
         }
       } else {
         setError("Your form are empty");
+        setEmailFocus(true);
+        setPasswordFocus(true);
       }
     } catch (err) {
       console.log("err:", err);
